@@ -35,9 +35,9 @@ class RestaurantsController < ApplicationController
     Restaurant.find(params[:id])
   end
 
-  # def valid_params
-  #   params.permit(:id, :name , :address)
-  # end
+  def valid_params
+    params.permit(:id, :restaurant_id , :pizza_id, :price)
+  end
 
   def not_found(exception)
     render json: { error: exception.message }, status: :not_found

@@ -28,9 +28,9 @@ end
 Restaurant.all.each do |restaurant|
   rand(1..3).times do
     pizza = Pizza.all.sample
-    Restaurantpizza.create(
-      restaurant_id: restaurant,
-      pizza_id: pizza,
+    RestaurantPizza.create(
+      restaurant_id: restaurant.id,
+      pizza_id: pizza.id,
       price: Faker::Number.decimal(l_digits: 2)
     )
   end

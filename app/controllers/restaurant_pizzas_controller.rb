@@ -17,13 +17,6 @@ class RestaurantPizzasController < ApplicationController
     render json: restaurant_pizzas, except: [:created_at, :updated_at], status: :created
   end
 
-  def destroy
-    restaurant_pizzas = find_pizza
-    restaurant_pizzas.destroy
-    head :no_content
-  end
-
-
   private
 
   def find_pizza
